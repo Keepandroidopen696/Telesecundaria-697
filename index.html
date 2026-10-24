@@ -1,30 +1,189 @@
+
 <!DOCTYPE html>
-<html lang="es-MX">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ataque - 697</title>
+<title>Alerta Cibernética | LYNX</title>
+
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@700&display=swap');
-body{margin:0;background:#0a0a0a;color:#fff;font-family:'Inter',sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh;padding:20px;text-align:center}
-.box{max-width:650px;background:#151515;border:2px solid #ff0000;border-radius:16px;padding:35px}
-h1{font-family:'Anton';font-size:32px;color:#ff0000;margin:0 0 20px 0}
-p{font-size:17px;line-height:1.7;font-weight:700}
-.linea{width:100%;height:2px;background:#ff0000;margin:20px 0}
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: #050505;
+    color: #ff2525;
+    font-family: monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    padding: 20px;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+        transparent 0px,
+        transparent 3px,
+        rgba(255,0,0,0.07) 4px
+    );
+    z-index: 2;
+}
+
+.panel {
+    width: 100%;
+    max-width: 750px;
+    border: 1px solid #ff2525;
+    box-shadow: 0 0 25px #700000;
+    padding: 25px;
+    background: rgba(15,0,0,0.94);
+    text-align: center;
+    animation: aparecer 1s ease;
+}
+
+h1 {
+    font-size: clamp(26px, 6vw, 44px);
+    text-shadow: 0 0 15px red;
+    animation: parpadeo 1.5s infinite;
+}
+
+.estado {
+    border: 1px solid #ff2525;
+    padding: 12px;
+    margin: 20px 0;
+    color: white;
+    text-align: left;
+    line-height: 1.8;
+}
+
+.mensaje {
+    color: #fff;
+    font-size: clamp(15px, 3.5vw, 19px);
+    line-height: 1.8;
+    margin: 25px 0;
+}
+
+.rojo {
+    color: #ff2525;
+    font-weight: bold;
+}
+
+.barra {
+    width: 100%;
+    height: 17px;
+    border: 1px solid red;
+    margin: 20px 0;
+    padding: 3px;
+}
+
+.progreso {
+    width: 0%;
+    height: 100%;
+    background: red;
+    box-shadow: 0 0 10px red;
+    animation: investigar 8s ease-in-out infinite alternate;
+}
+
+.pie {
+    color: #888;
+    font-size: 12px;
+    margin-top: 25px;
+}
+
+@keyframes parpadeo {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.65; }
+}
+
+@keyframes investigar {
+    from { width: 8%; }
+    to { width: 95%; }
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 </style>
 </head>
+
 <body>
-<div class="box">
-<h1>ATAQUE CIBERNÉTICO</h1>
-<p>
-La página web está siendo atacada.<br><br>
-No dejaremos que revoquen la página de ayuda a la institución.<br><br>
-</p>
-<div class="linea"></div>
-<p>
-No dejaremos que tomen la Base de datos, no queremos hacer daño, seguiremos defendiendo el código.
-</p>
-<p style="color:#888;font-size:12px;margin-top:25px;letter-spacing:2px;font-family:'Anton'">ATTE: VESSEL - NEZA YORK 697</p>
-</div>
+<main class="panel">
+
+    <p class="rojo">[ SISTEMA DE MONITOREO LYNX ]</p>
+
+    <h1>⚠ ALERTA CIBERNÉTICA</h1>
+
+    <div class="estado">
+        <div>[!] Evento detectado: REVOCACIÓN</div>
+        <div>[!] Estado: <span class="rojo">BAJO INVESTIGACIÓN</span></div>
+        <div>[+] Interfaz de seguridad: ACTIVA</div>
+        <div>[+] Modo: MONITOREO SIMULADO</div>
+    </div>
+
+    <div class="mensaje">
+        <span class="rojo">Hemos detectado una revocación hacia la página.</span>
+        <br><br>
+        No dejaremos que ataque la base de datos.
+        Seguiremos investigando sin importar los ataques.
+        <br><br>
+        <span class="rojo">
+            ¡PODREMOS LEVANTAR LA PÁGINA WEB!
+        </span>
+    </div>
+
+    <p>INVESTIGANDO EL INCIDENTE...</p>
+
+    <div class="barra">
+        <div class="progreso"></div>
+    </div>
+
+    <div id="terminal" class="estado"></div>
+
+    <h2>🛡 LA PÁGINA SEGUIRÁ EN PIE</h2>
+
+    <p class="pie">
+        LYNX SECURITY SYSTEM · 2026<br>
+        Esta pantalla es una simulación visual.
+    </p>
+
+</main>
+
+<script>
+const mensajes = [
+    "[+] Iniciando monitoreo visual...",
+    "[+] Analizando el estado del sistema...",
+    "[+] Verificando la interfaz...",
+    "[+] Investigación en curso...",
+    "[+] Preparando recuperación de la página..."
+];
+
+let i = 0;
+const terminal = document.getElementById("terminal");
+
+function actualizarTerminal() {
+    terminal.innerHTML = mensajes
+        .slice(0, i + 1)
+        .join("<br>");
+
+    i = (i + 1) % mensajes.length;
+
+    if (i === 0) {
+        terminal.innerHTML = mensajes.join("<br>");
+    }
+}
+
+actualizarTerminal();
+setInterval(actualizarTerminal, 2500);
+</script>
+
 </body>
-</html>
+      </html>
+      
