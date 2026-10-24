@@ -3,40 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>697 - Alerta</title>
+<title>Neza York 697 - 5 Cuentas Registradas</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@900&display=swap');
-body{margin:0;background:#080808;display:flex;align-items:center;justify-content:center;min-height:100vh;font-family:'Inter',sans-serif;padding:20px}
-.alerta{max-width:600px;width:100%;background:#1a1a00;border:2px solid #ffcc00;border-radius:18px;padding:30px;text-align:center;box-shadow:0 0 40px rgba(255,204,0,0.4);animation:pulse 1.5s infinite}
-@keyframes pulse{0%{box-shadow:0 0 20px rgba(255,204,0,0.4)}50%{box-shadow:0 0 40px rgba(255,204,0,0.8)}100%{box-shadow:0 0 20px rgba(255,204,0,0.4)}}
-.icono{font-size:60px;margin-bottom:10px;animation:parpadea 1s infinite}
-@keyframes parpadea{0%,100%{opacity:1}50%{opacity:0.5}}
-h1{font-family:'Anton';font-size:36px;color:#ffcc00;margin:0;line-height:1}
-.sub{color:#fff;font-size:18px;font-weight:900;margin:15px 0}
-.barra{width:100%;height:10px;background:#333;border-radius:10px;overflow:hidden;margin:20px 0}
-.progreso{height:100%;width:0%;background:#ffcc00;animation:carga 3s forwards}
-@keyframes carga{to{width:100%}}
-p{color:#aaa;font-size:13px;margin-top:15px}
-.contador{font-family:'Anton';font-size:48px;color:#ffcc00}
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;700;900&display=swap');
+body{margin:0;background:#080808;color:#fff;font-family:'Inter',sans-serif;padding:20px}
+.box{max-width:700px;margin:20px auto;background:#111;border:2px solid #ffcc00;border-radius:20px;padding:30px}
+h1{font-family:'Anton';font-size:32px;color:#ffcc00;text-align:center;margin:0}
+.alerta{background:#1a1a00;border:1px solid #ffcc00;padding:12px;border-radius:10px;text-align:center;color:#ffcc00;font-weight:900;margin:20px 0;animation:pulse 1.5s infinite}
+@keyframes pulse{0%{opacity:0.8}50%{opacity:1}100%{opacity:0.8}}
+.item{display:flex;justify-content:space-between;align-items:center;background:#222;padding:14px;border-radius:10px;margin:10px 0;border-left:4px solid #ff0000}
+.item.nueva{border-left-color:#ffcc00;background:#2a2a15;box-shadow:0 0 10px rgba(255,204,0,0.3)}
+.nombre{font-weight:700;font-size:14px}
+.badge-real{background:#ff0000;color:#fff;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:900}
+.badge-nueva{background:#ffcc00;color:#000;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:900}
+.total{text-align:center;margin-top:20px;font-family:'Anton';font-size:20px;color:#888}
 </style>
 </head>
 <body>
-<div class="alerta">
-<div class="icono">⚠️</div>
-<h1>2 CUENTAS DETECTADAS</h1>
-<div class="sub">Están siendo registradas para la página web</div>
-<div class="contador" id="count">2</div>
-<div class="barra"><div class="progreso"></div></div>
-<p>🔍 Analizando cuentas... <br> Agregando a base de datos 697 <br> <b style="color:#fff">Total ahora: 12 cuentas (3 reales + 7 falsas + 2 nuevas)</b></p>
-</div>
+<div class="box">
+<h1>🚨 5 CUENTAS REGISTRADAS 697 🚨</h1>
+<div class="alerta">⚠️ 2 CUENTAS DETECTADAS - ESTÁN SIENDO REGISTRADAS PARA LA PÁGINA WEB</div>
 
-<script>
-let c=0;
-setInterval(()=>{
-  c++;
-  document.getElementById('count').innerText = c%3===0 ? "2 CUENTAS" : "2";
-},500);
-setTimeout(()=>{ alert("2 cuentas nuevas registradas we - actualiza tu lista"); },3500);
-</script>
+<div class="item"><span class="nombre">1. quemadostelesecundaria697 / tele.secundaria697</span><span class="badge-real">REGISTRADA</span></div>
+<div class="item"><span class="nombre">2. quemados_telesecundaria_697</span><span class="badge-real">REGISTRADA</span></div>
+<div class="item"><span class="nombre">3. quemadosdelatelesecundaria697</span><span class="badge-real">REGISTRADA</span></div>
+<div class="item nueva"><span class="nombre">4. Telesecundaria-Quemon-697</span><span class="badge-nueva">NUEVA - REGISTRANDO</span></div>
+<div class="item nueva"><span class="nombre">5. Vs-de-la-telesecu697</span><span class="badge-nueva">NUEVA - REGISTRANDO</span></div>
+
+<div class="total">TOTAL: 5 CUENTAS REALES 697<br><span style="color:#ffcc00;font-size:14px">+ 7 FALSAS DETECTADAS = 12 CUENTAS INVESTIGADAS</span></div>
+<p style="text-align:center;color:#666;font-size:12px;margin-top:20px">ATTE: VESSEL - NEZA YORK - ACTUALIZADO SÁBADO 24</p>
+</div>
 </body>
 </html>
