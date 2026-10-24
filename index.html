@@ -1,189 +1,83 @@
-
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-MX">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alerta Cibernética | LYNX</title>
-
+<title>Neza York 697 - Sábado 24</title>
 <style>
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    min-height: 100vh;
-    background: #050505;
-    color: #ff2525;
-    font-family: monospace;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow-x: hidden;
-    padding: 20px;
-}
-
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    background: repeating-linear-gradient(
-        transparent 0px,
-        transparent 3px,
-        rgba(255,0,0,0.07) 4px
-    );
-    z-index: 2;
-}
-
-.panel {
-    width: 100%;
-    max-width: 750px;
-    border: 1px solid #ff2525;
-    box-shadow: 0 0 25px #700000;
-    padding: 25px;
-    background: rgba(15,0,0,0.94);
-    text-align: center;
-    animation: aparecer 1s ease;
-}
-
-h1 {
-    font-size: clamp(26px, 6vw, 44px);
-    text-shadow: 0 0 15px red;
-    animation: parpadeo 1.5s infinite;
-}
-
-.estado {
-    border: 1px solid #ff2525;
-    padding: 12px;
-    margin: 20px 0;
-    color: white;
-    text-align: left;
-    line-height: 1.8;
-}
-
-.mensaje {
-    color: #fff;
-    font-size: clamp(15px, 3.5vw, 19px);
-    line-height: 1.8;
-    margin: 25px 0;
-}
-
-.rojo {
-    color: #ff2525;
-    font-weight: bold;
-}
-
-.barra {
-    width: 100%;
-    height: 17px;
-    border: 1px solid red;
-    margin: 20px 0;
-    padding: 3px;
-}
-
-.progreso {
-    width: 0%;
-    height: 100%;
-    background: red;
-    box-shadow: 0 0 10px red;
-    animation: investigar 8s ease-in-out infinite alternate;
-}
-
-.pie {
-    color: #888;
-    font-size: 12px;
-    margin-top: 25px;
-}
-
-@keyframes parpadeo {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.65; }
-}
-
-@keyframes investigar {
-    from { width: 8%; }
-    to { width: 95%; }
-}
-
-@keyframes aparecer {
-    from { opacity: 0; transform: translateY(15px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;700;900&display=swap');
+body{margin:0;background:#080808;color:#ededed;font-family:'Inter',sans-serif}
+header{background:#ff0000;padding:14px;text-align:center;font-family:'Anton';font-size:34px;color:white}
+nav{background:#1a1a1a;padding:10px;text-align:center;color:#888;font-size:11px;letter-spacing:3px}
+.hero{max-width:900px;margin:25px auto;background:#151515;border:1px solid #2a2a2a;border-radius:16px;overflow:hidden}
+.content{padding:28px}
+h1{font-family:'Anton';font-size:40px;margin:18px 0 10px 0}
+h2{font-family:'Anton';color:#ffcc00;font-size:22px;margin-top:30px;border-bottom:1px solid #333;padding-bottom:8px}
+.contador{background:#000;border:2px solid #ffcc00;padding:24px;border-radius:14px;text-align:center;margin:22px 0}
+#timer{font-family:'Anton';font-size:54px;color:#ffcc00;letter-spacing:3px}
+.com1{background:#ffcc00;color:#000;padding:22px;border-radius:12px;font-weight:800;line-height:1.8;font-size:17px;text-align:justify;border:3px solid #000}
+.com2{background:#101010;color:#fff;padding:22px;border-radius:12px;font-weight:600;line-height:1.8;font-size:16px;text-align:justify;border:2px solid #00ff88;margin-top:20px}
+.actu{background:#2b0000;color:#fff;padding:22px;border-radius:12px;font-weight:800;font-size:17px;text-align:center;border:2px solid #ff0000;margin-top:20px}
+.item{display:flex;justify-content:space-between;background:#2a2a2a;padding:12px 14px;border-radius:8px;margin:8px 0;font-size:13px;border-left:4px solid transparent}
+.item-real{border-left-color:#00ff88}
+.item-falso{border-left-color:#ff0000;background:#2f1a1a}
+.nombre{color:#fff}
+.estado-real{color:#00ff88;font-weight:900}
+.estado-falso{color:#ff0000;font-weight:900}
+.firma{margin-top:35px;text-align:right;font-family:'Anton';font-size:24px}
 </style>
 </head>
-
 <body>
-<main class="panel">
+<header>NEZA YORK</header>
+<nav>TELESECUNDARIA 697 • SÁBADO 24 OCT • FALTAN 2 DÍAS</nav>
+<div class="hero">
+<div class="content">
+<h1>HASTA AQUÍ LLEGARON ACOSADORES</h1>
+<div class="contador">
+<div id="timer">02:00:00:00</div>
+<div style="font-size:13px;color:#fff;margin-top:8px;font-weight:bold">HOY SÁBADO 24 OCT → LUNES 26 OCT 8:00 AM HONORES / 8:10 AM DIRECCIÓN</div>
+</div>
 
-    <p class="rojo">[ SISTEMA DE MONITOREO LYNX ]</p>
+<h2>COMUNICADO 1</h2>
+<div class="com1">
+Tenemos suficientes pruebas para bajar la cuenta e ir a dirección. Esperemos hasta el Lunes 26 de octubre a las 8:00 hora de los honores a la bandera para dar el comunicado o a las 8:10 para ir a dirección e informar de la situación. Recuerda que en Neza York no toleramos ese tipo de situaciones aunque yo solo sea un alumno y no tenga capacidad de poder hacer algo contra esas personas podemos darles reporte así que hasta aquí llegaron Acosadores
+</div>
 
-    <h1>⚠ ALERTA CIBERNÉTICA</h1>
+<h2>COMUNICADO 2</h2>
+<div class="com2">
+Hemos estado investigando y recolectando información sobre la situación de quemando gente de Telesecundaria 697 y llegamos a 10 Cuentas 5 de instagram y 5 de tiktok 18 capturas<br><br>
+Neza York No es una empresa ni alguien que puede sancionar a personas pero puede defender tus derechos y bajar cuentas con reportes (si es que lo logra)<br><br>
+Neza York no es una página de adorno en Neza York estamos para ayudar que tengas un lindo Día
+</div>
 
-    <div class="estado">
-        <div>[!] Evento detectado: REVOCACIÓN</div>
-        <div>[!] Estado: <span class="rojo">BAJO INVESTIGACIÓN</span></div>
-        <div>[+] Interfaz de seguridad: ACTIVA</div>
-        <div>[+] Modo: MONITOREO SIMULADO</div>
-    </div>
+<h2>ACTUALIZACIÓN</h2>
+<div class="actu">10 Cuentas eran falsas hemos caído en la trampa solo 3 son reales pero las 18 Cap son todas de la 697</div>
 
-    <div class="mensaje">
-        <span class="rojo">Hemos detectado una revocación hacia la página.</span>
-        <br><br>
-        No dejaremos que ataque la base de datos.
-        Seguiremos investigando sin importar los ataques.
-        <br><br>
-        <span class="rojo">
-            ¡PODREMOS LEVANTAR LA PÁGINA WEB!
-        </span>
-    </div>
+<div style="background:#1e1e1e;border:1px solid #333;padding:20px;border-radius:12px;margin-top:25px">
+<h2 style="margin-top:0;border:none;padding:0">CUENTAS VERIFICADAS - EN ROJO</h2>
+<div class="item item-real"><span class="nombre">quemadostelesecundaria697 / tele.secundaria697</span><span class="estado-real">REAL 697 ✓</span></div>
+<div class="item item-real"><span class="nombre">quemados_telesecundaria_697</span><span class="estado-real">REAL 697 ✓</span></div>
+<div class="item item-real"><span class="nombre">quemadosdelatelesecundaria697</span><span class="estado-real">REAL 697 ✓</span></div>
 
-    <p>INVESTIGANDO EL INCIDENTE...</p>
+<div class="item item-falso"><span class="nombre">quemados.telesecundaria679</span><span class="estado-falso">FALSA - EN ROJO</span></div>
+<div class="item item-falso"><span class="nombre">quemados_telesecundaria_6048</span><span class="estado-falso">FALSA - EN ROJO</span></div>
+<div class="item item-falso"><span class="nombre">quemados_tele_secundaria_26</span><span class="estado-falso">FALSA - EN ROJO</span></div>
+<div class="item item-falso"><span class="nombre">quemados_tele_secundaria_263 / 17 / 30o</span><span class="estado-falso">FALSAS - EN ROJO</span></div>
+<p style="text-align:center;color:#ff0000;font-weight:900;font-size:13px;margin-top:15px">↑ LAS DE ROJO SON LAS 7 FALSAS - LAS 3 VERDES SON LAS REALES ↑<br><span style="color:#ffcc00">18 CAPTURAS TODAS SON DE LA 697</span></p>
+</div>
 
-    <div class="barra">
-        <div class="progreso"></div>
-    </div>
-
-    <div id="terminal" class="estado"></div>
-
-    <h2>🛡 LA PÁGINA SEGUIRÁ EN PIE</h2>
-
-    <p class="pie">
-        LYNX SECURITY SYSTEM · 2026<br>
-        Esta pantalla es una simulación visual.
-    </p>
-
-</main>
-
+<p class="firma">ATTE: VESSEL</p>
+</div>
+</div>
 <script>
-const mensajes = [
-    "[+] Iniciando monitoreo visual...",
-    "[+] Analizando el estado del sistema...",
-    "[+] Verificando la interfaz...",
-    "[+] Investigación en curso...",
-    "[+] Preparando recuperación de la página..."
-];
-
-let i = 0;
-const terminal = document.getElementById("terminal");
-
-function actualizarTerminal() {
-    terminal.innerHTML = mensajes
-        .slice(0, i + 1)
-        .join("<br>");
-
-    i = (i + 1) % mensajes.length;
-
-    if (i === 0) {
-        terminal.innerHTML = mensajes.join("<br>");
-    }
+const objetivo = new Date('2026-10-26T08:00:00-06:00').getTime();
+function tick(){
+  let d = objetivo - new Date().getTime();
+  if(d<=0){document.getElementById('timer').innerText="¡ES HOY!"; return;}
+  const dias=Math.floor(d/(1000*60*60*24)), h=Math.floor((d%(1000*60*60*24))/(1000*60*60)), m=Math.floor((d%(1000*60*60))/(1000*60)), s=Math.floor((d%(1000*60))/1000);
+  document.getElementById('timer').innerText=`${String(dias).padStart(2,'0')}:${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
 }
-
-actualizarTerminal();
-setInterval(actualizarTerminal, 2500);
+setInterval(tick,1000); tick();
 </script>
-
 </body>
-      </html>
-      
+</html>
