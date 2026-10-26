@@ -1,123 +1,149 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SISTEMA NEZA - AVISO 697</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NEZA OS - AVISO</title>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600;800;900&display=swap');
 *{box-sizing:border-box;margin:0;padding:0}
 body{
   min-height:100vh;
-  background: radial-gradient(circle at 30% 20%, #ff3b 0%, #9b0000 50%, #3a0000 100%);
-  font-family: system-ui, sans-serif;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
-  padding-top:80px;
+  background:#0a0a0a;
+  font-family:'Inter',system-ui,sans-serif;
+  display:flex;align-items:center;justify-content:center;
+  padding:20px;padding-top:70px;
   color:#fff;
+}
+body::before{
+  content:"";position:fixed;inset:0;
+  background:radial-gradient(600px at 20% 10%, rgba(255,59,48,0.25), transparent),
+             radial-gradient(800px at 80% 90%, rgba(255,235,0,0.15), transparent);
+  pointer-events:none;
 }
 #anuncioNeza{
   display:none;position:fixed;top:0;left:0;right:0;
   background:#ffeb00;color:#000;padding:14px;
   text-align:center;font-weight:900;z-index:9999;
-  font-size:12px;border-bottom:3px solid #000;
+  font-size:11px;letter-spacing:0.3px;
 }
-.card{
-  width:100%;max-width:420px;
-  background:rgba(255,255,255,0.1);
-  backdrop-filter: blur(18px);
-  border:1px solid rgba(255,255,255,0.2);
-  border-radius:28px;
-  padding:28px 24px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+.phone{
+  width:100%;max-width:380px;
+  background:#161616;
+  border-radius:40px;
+  padding:10px;
+  border:1px solid #222;
+  box-shadow:0 30px 80px rgba(0,0,0,0.8), inset 0 1px 1px rgba(255,255,255,0.1);
+}
+.screen{
+  background:linear-gradient(180deg,#1e1e1e,#121212);
+  border-radius:32px;
+  padding:30px 22px 24px;
   text-align:center;
+  position:relative;
+  overflow:hidden;
 }
-.icon{font-size:48px;margin-bottom:12px}
-h1{font-size:22px;font-weight:900;letter-spacing:-0.5px;line-height:1.1}
-.badge{
-  display:inline-block;margin:12px 0;
-  background:#fff;color:#c00000;
-  padding:6px 14px;border-radius:100px;
-  font-weight:900;font-size:12px;
-  letter-spacing:0.5px;
+.screen::after{
+  content:"";position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,#ff3b30,transparent);
 }
-p{font-size:14px;line-height:1.6;color:rgba(255,255,255,0.9);margin-top:12px}
-.small{font-size:11px;opacity:0.7;margin-top:16px;line-height:1.4}
+.top-dot{width:80px;height:6px;background:#2a2a2a;border-radius:10px;margin:0 auto 24px}
+.shield{
+  width:72px;height:72px;margin:0 auto 16px;
+  background:linear-gradient(135deg,#ff3b30,#ff6b6b);
+  border-radius:20px;display:flex;align-items:center;justify-content:center;
+  font-size:34px;box-shadow:0 10px 30px rgba(255,59,48,0.4);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+h1{font-size:22px;font-weight:900;letter-spacing:-0.8px}
+.sub{font-size:12px;color:#888;margin-top:6px;font-weight:600;letter-spacing:1px;text-transform:uppercase}
+.divider{height:1px;background:#222;margin:20px 0}
+.account{
+  background:#000;border:1px solid #2a2a2a;
+  padding:10px;border-radius:12px;font-size:11px;
+  font-family:monospace;color:#ff5a5a;letter-spacing:0.5px;
+}
+.text{font-size:14px;line-height:1.6;color:#d0d0d0;margin-top:16px;text-align:left}
+.text b{color:#fff}
+.status{
+  margin-top:20px;background:#ffeb00;color:#000;
+  padding:12px;border-radius:14px;font-size:12px;font-weight:800;
+  line-height:1.4;text-align:left;
+}
+.status span{display:block;font-size:10px;opacity:0.7;margin-top:4px;font-weight:600}
+.foot{font-size:10px;color:#555;margin-top:16px;line-height:1.4}
 
 .power-btn{
-  position:fixed;bottom:28px;right:28px;
-  width:62px;height:62px;border-radius:50%;
-  background:#111;border:3px solid #ffeb00;
-  color:#ffeb00;font-size:26px;
+  position:fixed;bottom:26px;right:26px;
+  width:60px;height:60px;border-radius:50%;
+  background:#fff;color:#000;font-size:22px;
   display:flex;align-items:center;justify-content:center;
-  cursor:pointer;z-index:100;
-  box-shadow:0 8px 20px rgba(0,0,0,0.5);
+  cursor:pointer;z-index:100;font-weight:900;
+  box-shadow:0 10px 30px rgba(0,0,0,0.6);
   transition:0.2s;
 }
-.power-btn:active{transform:scale(0.9)}
+.power-btn:active{transform:scale(0.88)}
 
 #menu{
-  display:none;position:fixed;bottom:100px;right:28px;
-  width:280px;background:#111;border-radius:20px;
-  padding:16px;border:2px solid #ffeb00;
-  z-index:99;box-shadow:0 20px 40px rgba(0,0,0,0.6);
+  display:none;position:fixed;bottom:96px;right:26px;
+  width:300px;background:rgba(20,20,20,0.95);
+  backdrop-filter:blur(20px);
+  border-radius:24px;padding:14px;
+  border:1px solid #2a2a2a;z-index:99;
+  box-shadow:0 20px 60px rgba(0,0,0,0.8);
 }
+#menu .head{font-size:10px;font-weight:900;color:#ffeb00;letter-spacing:1.2px;padding:6px 8px}
 #menu a{
-  display:block;background:#1e1e1e;color:#fff;
-  text-decoration:none;padding:12px 14px;
-  border-radius:12px;margin:8px 0;font-size:13px;
-  font-weight:700;border:1px solid #2a2a2a;
-  transition:0.2s;
+  display:flex;align-items:center;gap:10px;
+  background:#1a1a1a;color:#fff;text-decoration:none;
+  padding:14px;border-radius:14px;margin:8px 0;
+  font-size:13px;font-weight:700;border:1px solid #252525;
 }
-#menu a:hover{background:#ffeb00;color:#000;transform:translateX(-3px)}
-#menu .label{font-size:10px;font-weight:900;color:#ffeb00;letter-spacing:1px;margin-bottom:8px}
+#menu a:hover{background:#fff;color:#000}
+#menu a small{display:block;font-size:10px;opacity:0.6;font-weight:600}
 </style>
 </head>
 <body>
 <div id="anuncioNeza">NezaOfficial: No pudimos encontrar al acosador pero dirección contactara con la policía cibernética</div>
 
-<div class="card">
-  <div class="icon">🛡️</div>
-  <h1>AVISO DEL SISTEMA</h1>
-  <div class="badge">quemadostelesecundaria697</div>
-  <p><b>No pudimos saber quién era el acosador</b> detrás de esa cuenta.</p>
-  <p>El reporte ya está en <b>Dirección</b>. Se contactará con la <b>Policía Cibernética</b> para investigación y baja definitiva.</p>
-  <p class="small">No difundas capturas. Si sabes algo, llévalo a orientación. Todo queda en anonimato.<br><br>Neza York - Telesec 697 - Servidor 600</p>
+<div class="phone">
+  <div class="screen">
+    <div class="top-dot"></div>
+    <div class="shield">!</div>
+    <h1>SISTEMA BLOQUEADO</h1>
+    <div class="sub">Telesecundaria 697 • Neza OS</div>
+    <div class="divider"></div>
+    <div class="account">CUENTA REPORTADA: quemadostelesecundaria697</div>
+    <div class="text">
+      No pudimos identificar al creador de la cuenta. 
+      <b>El acoso no es broma.</b><br><br>
+      Dirección ya tiene el reporte y contactará a <b>Policía Cibernética</b> para la baja e investigación.
+    </div>
+    <div class="status">
+      ⚠️ NezaOfficial: No pudimos encontrar al acosador pero dirección contactara con la policía cibernética
+      <span>Actualizado • Hoy • Neza York 600</span>
+    </div>
+    <div class="foot">Si recibiste mensaje de esa cuenta, no lo compartas. Reporta en orientación. Queda anónimo.</div>
+  </div>
 </div>
 
 <div class="power-btn" onclick="toggleMenu()">⏻</div>
 <div id="menu">
-  <div class="label">NEZA SYSTEM - PÁGINAS</div>
-  <a href="https://keepandroidopen696.github.io/ala-verga-los-que-queman/" target="_blank">🔥 Ala verga los que queman</a>
-  <a href="https://keepandroidopen696.github.io/" target="_blank">🏠 Inicio Neza York</a>
-  <a href="https://keepandroidopen696.github.io/palestina-libre/" target="_blank">🇵🇸 Palestina Libre</a>
-  <a href="https://keepandroidopen696.github.io/que-es-la-onu/" target="_blank">🌐 Qué es la ONU</a>
-  <a href="#" onclick="toggleMenu(); return false;" style="text-align:center;background:transparent;border:none;color:#777">Cerrar ✕</a>
+  <div class="head">NEZA SYSTEM • MENU</div>
+  <a href="https://keepandroidopen696.github.io/ala-verga-los-que-queman/" target="_blank"><div>🔥<br></div><div>Ala verga los que queman<small>Denuncia directa</small></div></a>
+  <a href="https://keepandroidopen696.github.io/" target="_blank"><div>🏠</div><div>Neza York Home<small>Página principal</small></div></a>
+  <a href="https://keepandroidopen696.github.io/palestina-libre/" target="_blank"><div>🇵🇸</div><div>Palestina Libre<small>Info solidaria</small></div></a>
+  <a href="https://keepandroidopen696.github.io/que-es-la-onu/" target="_blank"><div>🌐</div><div>Qué es la ONU<small>Explicación corta</small></div></a>
 </div>
 
 <script>
-const mensajeNeza="NezaOfficial: No pudimos encontrar al acosador pero dirección contactara con la policía cibernética";
-let audioCtx;
-function playDing(t=1){
-  try{
-    if(!audioCtx) audioCtx=new(window.AudioContext||window.webkitAudioContext)();
-    let o=audioCtx.createOscillator(), g=audioCtx.createGain();
-    o.frequency.value=t==1?880:440; g.gain.value=0.18;
-    o.connect(g); g.connect(audioCtx.destination);
-    o.start(); g.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime+0.6); o.stop(audioCtx.currentTime+0.6);
-    if(t==1){setTimeout(()=>{let o2=audioCtx.createOscillator(),g2=audioCtx.createGain();o2.frequency.value=659;g2.gain.value=0.12;o2.connect(g2);g2.connect(audioCtx.destination);o2.start();g2.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime+0.5);o2.stop(audioCtx.currentTime+0.5);},120);}
-  }catch(e){}
-}
-function mostrarAnuncio(){playDing(1);let a=document.getElementById("anuncioNeza");a.innerText=mensajeNeza;a.style.display="block";setTimeout(()=>a.style.display="none",8000);}
-setTimeout(mostrarAnuncio,1200); setInterval(mostrarAnuncio,60000);
-
-function toggleMenu(){
-  let m=document.getElementById("menu");
-  playDing(2);
-  m.style.display = m.style.display==="block" ? "none" : "block";
-}
-document.body.addEventListener('click',()=>{if(!audioCtx)audioCtx=new(window.AudioContext||window.webkitAudioContext)();},{once:true});
+const msg="NezaOfficial: No pudimos encontrar al acosador pero dirección contactara con la policía cibernética";
+let ctx;
+function ding(t=1){try{if(!ctx)ctx=new(window.AudioContext||window.webkitAudioContext)();let o=ctx.createOscillator(),g=ctx.createGain();o.frequency.value=t==1?880:500;g.gain.value=0.15;o.connect(g);g.connect(ctx.destination);o.start();g.gain.exponentialRampToValueAtTime(0.0001,ctx.currentTime+0.5);o.stop(ctx.currentTime+0.5);}catch(e){}}
+function show(){ding(1);let a=document.getElementById("anuncioNeza");a.innerText=msg;a.style.display="block";setTimeout(()=>a.style.display="none",7000);}
+setTimeout(show,1000); setInterval(show,60000);
+function toggleMenu(){ding(2);let m=document.getElementById("menu");m.style.display=m.style.display==="block"?"none":"block";}
+document.body.addEventListener('click',()=>{if(!ctx)ctx=new(window.AudioContext||window.webkitAudioContext)();},{once:true});
 </script>
 </body>
 </html>
