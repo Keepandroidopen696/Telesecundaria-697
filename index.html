@@ -3,120 +3,121 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Aviso - Telesecundaria 697</title>
+<title>SISTEMA NEZA - AVISO 697</title>
 <style>
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{
-    background:#d00000;
-    color:#fff;
-    font-family:system-ui, sans-serif;
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:24px;
-    text-align:center;
-    padding-top:70px;
-  }
-  #anuncioNeza{
-    display:none;
-    position:fixed;
-    top:0;left:0;right:0;
-    background:#ffeb00;
-    color:#000;
-    padding:14px 12px;
-    text-align:center;
-    font-weight:900;
-    z-index:9999;
-    font-size:12px;
-    border-bottom:3px solid #000;
-    line-height:1.3;
-  }
-  .box{
-    max-width:500px;
-    border:3px solid #fff;
-    border-radius:20px;
-    padding:28px 22px;
-    background:rgba(0,0,0,0.18);
-  }
-  h1{font-size:26px;line-height:1.1;margin-bottom:12px}
-  .cuenta{
-    background:#fff;
-    color:#d00000;
-    padding:6px 12px;
-    border-radius:8px;
-    font-weight:900;
-    display:inline-block;
-    margin:8px 0;
-    font-size:14px;
-  }
-  p{font-size:15px;line-height:1.5;margin-top:14px}
-  .small{font-size:12px;opacity:0.9;margin-top:18px;line-height:1.4}
-  button{
-    margin-top:20px;
-    background:#fff;
-    color:#d00000;
-    border:none;
-    padding:12px 18px;
-    border-radius:20px;
-    font-weight:800;
-    cursor:pointer;
-  }
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  min-height:100vh;
+  background: radial-gradient(circle at 30% 20%, #ff3b 0%, #9b0000 50%, #3a0000 100%);
+  font-family: system-ui, sans-serif;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  padding-top:80px;
+  color:#fff;
+}
+#anuncioNeza{
+  display:none;position:fixed;top:0;left:0;right:0;
+  background:#ffeb00;color:#000;padding:14px;
+  text-align:center;font-weight:900;z-index:9999;
+  font-size:12px;border-bottom:3px solid #000;
+}
+.card{
+  width:100%;max-width:420px;
+  background:rgba(255,255,255,0.1);
+  backdrop-filter: blur(18px);
+  border:1px solid rgba(255,255,255,0.2);
+  border-radius:28px;
+  padding:28px 24px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  text-align:center;
+}
+.icon{font-size:48px;margin-bottom:12px}
+h1{font-size:22px;font-weight:900;letter-spacing:-0.5px;line-height:1.1}
+.badge{
+  display:inline-block;margin:12px 0;
+  background:#fff;color:#c00000;
+  padding:6px 14px;border-radius:100px;
+  font-weight:900;font-size:12px;
+  letter-spacing:0.5px;
+}
+p{font-size:14px;line-height:1.6;color:rgba(255,255,255,0.9);margin-top:12px}
+.small{font-size:11px;opacity:0.7;margin-top:16px;line-height:1.4}
+
+.power-btn{
+  position:fixed;bottom:28px;right:28px;
+  width:62px;height:62px;border-radius:50%;
+  background:#111;border:3px solid #ffeb00;
+  color:#ffeb00;font-size:26px;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;z-index:100;
+  box-shadow:0 8px 20px rgba(0,0,0,0.5);
+  transition:0.2s;
+}
+.power-btn:active{transform:scale(0.9)}
+
+#menu{
+  display:none;position:fixed;bottom:100px;right:28px;
+  width:280px;background:#111;border-radius:20px;
+  padding:16px;border:2px solid #ffeb00;
+  z-index:99;box-shadow:0 20px 40px rgba(0,0,0,0.6);
+}
+#menu a{
+  display:block;background:#1e1e1e;color:#fff;
+  text-decoration:none;padding:12px 14px;
+  border-radius:12px;margin:8px 0;font-size:13px;
+  font-weight:700;border:1px solid #2a2a2a;
+  transition:0.2s;
+}
+#menu a:hover{background:#ffeb00;color:#000;transform:translateX(-3px)}
+#menu .label{font-size:10px;font-weight:900;color:#ffeb00;letter-spacing:1px;margin-bottom:8px}
 </style>
 </head>
 <body>
 <div id="anuncioNeza">NezaOfficial: No pudimos encontrar al acosador pero dirección contactara con la policía cibernética</div>
 
-  <div class="box">
-    <h1>⚠️ AVISO OFICIAL</h1>
-    <div class="cuenta">quemadostelesecundaria697</div>
-    <p>
-      <b>No pudimos saber quién era el acosador</b> detrás de la cuenta 
-      <b>"quemadostelesecundaria697"</b>.
-    </p>
-    <p>
-      El caso ya fue reportado. <b>Dirección contactará con la Policía Cibernética</b> 
-      para su investigación y baja de la cuenta.
-    </p>
-    <p class="small">
-      No compartas el contenido. Si viste algo, guarda captura y llévala a orientación.<br>
-      Atte: Neza York - Telesecundaria 697
-    </p>
-    <button onclick="window.history.back()">Entendido</button>
-  </div>
+<div class="card">
+  <div class="icon">🛡️</div>
+  <h1>AVISO DEL SISTEMA</h1>
+  <div class="badge">quemadostelesecundaria697</div>
+  <p><b>No pudimos saber quién era el acosador</b> detrás de esa cuenta.</p>
+  <p>El reporte ya está en <b>Dirección</b>. Se contactará con la <b>Policía Cibernética</b> para investigación y baja definitiva.</p>
+  <p class="small">No difundas capturas. Si sabes algo, llévalo a orientación. Todo queda en anonimato.<br><br>Neza York - Telesec 697 - Servidor 600</p>
+</div>
+
+<div class="power-btn" onclick="toggleMenu()">⏻</div>
+<div id="menu">
+  <div class="label">NEZA SYSTEM - PÁGINAS</div>
+  <a href="https://keepandroidopen696.github.io/ala-verga-los-que-queman/" target="_blank">🔥 Ala verga los que queman</a>
+  <a href="https://keepandroidopen696.github.io/" target="_blank">🏠 Inicio Neza York</a>
+  <a href="https://keepandroidopen696.github.io/palestina-libre/" target="_blank">🇵🇸 Palestina Libre</a>
+  <a href="https://keepandroidopen696.github.io/que-es-la-onu/" target="_blank">🌐 Qué es la ONU</a>
+  <a href="#" onclick="toggleMenu(); return false;" style="text-align:center;background:transparent;border:none;color:#777">Cerrar ✕</a>
+</div>
 
 <script>
-const mensajeNeza = "NezaOfficial: No pudimos encontrar al acosador pero dirección contactara con la policía cibernética";
+const mensajeNeza="NezaOfficial: No pudimos encontrar al acosador pero dirección contactara con la policía cibernética";
 let audioCtx;
-function playDing(tipo=1){
+function playDing(t=1){
   try{
-    if(!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    if(!audioCtx) audioCtx=new(window.AudioContext||window.webkitAudioContext)();
     let o=audioCtx.createOscillator(), g=audioCtx.createGain();
-    o.frequency.value=tipo==1?880:440; g.gain.value=0.2;
+    o.frequency.value=t==1?880:440; g.gain.value=0.18;
     o.connect(g); g.connect(audioCtx.destination);
-    o.start(); g.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime+(tipo==1?0.6:0.8)); o.stop(audioCtx.currentTime+(tipo==1?0.6:0.8));
-    if(tipo==1){
-      setTimeout(()=>{
-        let o2=audioCtx.createOscillator(), g2=audioCtx.createGain();
-        o2.frequency.value=659; g2.gain.value=0.12;
-        o2.connect(g2); g2.connect(audioCtx.destination);
-        o2.start(); g2.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime+0.5); o2.stop(audioCtx.currentTime+0.5);
-      },120);
-    }
+    o.start(); g.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime+0.6); o.stop(audioCtx.currentTime+0.6);
+    if(t==1){setTimeout(()=>{let o2=audioCtx.createOscillator(),g2=audioCtx.createGain();o2.frequency.value=659;g2.gain.value=0.12;o2.connect(g2);g2.connect(audioCtx.destination);o2.start();g2.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime+0.5);o2.stop(audioCtx.currentTime+0.5);},120);}
   }catch(e){}
 }
-function mostrarAnuncio(){
-  playDing(1);
-  let a=document.getElementById("anuncioNeza");
-  a.innerText=mensajeNeza;
-  a.style.display="block";
-  if(navigator.vibrate) navigator.vibrate([100,50,100]);
-  setTimeout(()=>{a.style.display="none";},8000);
+function mostrarAnuncio(){playDing(1);let a=document.getElementById("anuncioNeza");a.innerText=mensajeNeza;a.style.display="block";setTimeout(()=>a.style.display="none",8000);}
+setTimeout(mostrarAnuncio,1200); setInterval(mostrarAnuncio,60000);
+
+function toggleMenu(){
+  let m=document.getElementById("menu");
+  playDing(2);
+  m.style.display = m.style.display==="block" ? "none" : "block";
 }
-// Suena al entrar y cada 60 segundos
-setTimeout(mostrarAnuncio,1000);
-setInterval(mostrarAnuncio,60000);
-document.body.addEventListener('click', ()=>{ if(!audioCtx) audioCtx=new(window.AudioContext||window.webkitAudioContext)(); }, {once:true});
+document.body.addEventListener('click',()=>{if(!audioCtx)audioCtx=new(window.AudioContext||window.webkitAudioContext)();},{once:true});
 </script>
 </body>
 </html>
