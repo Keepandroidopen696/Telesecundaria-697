@@ -1,149 +1,216 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>NEZA OS - AVISO</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600;800;900&display=swap');
-*{box-sizing:border-box;margin:0;padding:0}
-body{
-  min-height:100vh;
-  background:#0a0a0a;
-  font-family:'Inter',system-ui,sans-serif;
-  display:flex;align-items:center;justify-content:center;
-  padding:20px;padding-top:70px;
-  color:#fff;
-}
-body::before{
-  content:"";position:fixed;inset:0;
-  background:radial-gradient(600px at 20% 10%, rgba(255,59,48,0.25), transparent),
-             radial-gradient(800px at 80% 90%, rgba(255,235,0,0.15), transparent);
-  pointer-events:none;
-}
-#anuncioNeza{
-  display:none;position:fixed;top:0;left:0;right:0;
-  background:#ffeb00;color:#000;padding:14px;
-  text-align:center;font-weight:900;z-index:9999;
-  font-size:11px;letter-spacing:0.3px;
-}
-.phone{
-  width:100%;max-width:380px;
-  background:#161616;
-  border-radius:40px;
-  padding:10px;
-  border:1px solid #222;
-  box-shadow:0 30px 80px rgba(0,0,0,0.8), inset 0 1px 1px rgba(255,255,255,0.1);
-}
-.screen{
-  background:linear-gradient(180deg,#1e1e1e,#121212);
-  border-radius:32px;
-  padding:30px 22px 24px;
-  text-align:center;
-  position:relative;
-  overflow:hidden;
-}
-.screen::after{
-  content:"";position:absolute;top:0;left:0;right:0;height:1px;
-  background:linear-gradient(90deg,transparent,#ff3b30,transparent);
-}
-.top-dot{width:80px;height:6px;background:#2a2a2a;border-radius:10px;margin:0 auto 24px}
-.shield{
-  width:72px;height:72px;margin:0 auto 16px;
-  background:linear-gradient(135deg,#ff3b30,#ff6b6b);
-  border-radius:20px;display:flex;align-items:center;justify-content:center;
-  font-size:34px;box-shadow:0 10px 30px rgba(255,59,48,0.4);
-  animation: pulse 2s infinite;
-}
-@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
-h1{font-size:22px;font-weight:900;letter-spacing:-0.8px}
-.sub{font-size:12px;color:#888;margin-top:6px;font-weight:600;letter-spacing:1px;text-transform:uppercase}
-.divider{height:1px;background:#222;margin:20px 0}
-.account{
-  background:#000;border:1px solid #2a2a2a;
-  padding:10px;border-radius:12px;font-size:11px;
-  font-family:monospace;color:#ff5a5a;letter-spacing:0.5px;
-}
-.text{font-size:14px;line-height:1.6;color:#d0d0d0;margin-top:16px;text-align:left}
-.text b{color:#fff}
-.status{
-  margin-top:20px;background:#ffeb00;color:#000;
-  padding:12px;border-radius:14px;font-size:12px;font-weight:800;
-  line-height:1.4;text-align:left;
-}
-.status span{display:block;font-size:10px;opacity:0.7;margin-top:4px;font-weight:600}
-.foot{font-size:10px;color:#555;margin-top:16px;line-height:1.4}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#08090c">
+  <title>Telesecundaria-697 | Comunicado Final</title>
 
-.power-btn{
-  position:fixed;bottom:26px;right:26px;
-  width:60px;height:60px;border-radius:50%;
-  background:#fff;color:#000;font-size:22px;
-  display:flex;align-items:center;justify-content:center;
-  cursor:pointer;z-index:100;font-weight:900;
-  box-shadow:0 10px 30px rgba(0,0,0,0.6);
-  transition:0.2s;
-}
-.power-btn:active{transform:scale(0.88)}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-#menu{
-  display:none;position:fixed;bottom:96px;right:26px;
-  width:300px;background:rgba(20,20,20,0.95);
-  backdrop-filter:blur(20px);
-  border-radius:24px;padding:14px;
-  border:1px solid #2a2a2a;z-index:99;
-  box-shadow:0 20px 60px rgba(0,0,0,0.8);
-}
-#menu .head{font-size:10px;font-weight:900;color:#ffeb00;letter-spacing:1.2px;padding:6px 8px}
-#menu a{
-  display:flex;align-items:center;gap:10px;
-  background:#1a1a1a;color:#fff;text-decoration:none;
-  padding:14px;border-radius:14px;margin:8px 0;
-  font-size:13px;font-weight:700;border:1px solid #252525;
-}
-#menu a:hover{background:#fff;color:#000}
-#menu a small{display:block;font-size:10px;opacity:0.6;font-weight:600}
-</style>
+    body {
+      background: #08090c;
+      color: #e5e7eb;
+      font-family: Arial, Helvetica, sans-serif;
+      min-height: 100vh;
+      padding: 30px 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 720px;
+      animation: aparecer 1.2s ease;
+    }
+
+    .top {
+      text-align: center;
+      padding: 15px 0 30px;
+      border-bottom: 1px solid #272a31;
+    }
+
+    .symbol {
+      font-size: 48px;
+      margin-bottom: 20px;
+      filter: grayscale(1);
+    }
+
+    .label {
+      color: #9298a4;
+      font-size: 11px;
+      letter-spacing: 4px;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: clamp(26px, 6vw, 39px);
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+
+    .subtitle {
+      color: #9298a4;
+      font-size: 16px;
+    }
+
+    .content {
+      padding: 30px 0;
+    }
+
+    .content h2 {
+      font-size: 18px;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+
+    .content p {
+      font-size: 14px;
+      line-height: 1.9;
+      color: #b4b8c1;
+      margin-bottom: 18px;
+    }
+
+    .highlight {
+      border-left: 3px solid #555d6b;
+      padding: 16px 18px;
+      background: #101217;
+      margin: 25px 0;
+      color: #e5e7eb;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .status {
+      text-align: center;
+      border: 1px solid #30343d;
+      padding: 14px;
+      margin-top: 30px;
+      color: #b7bbc4;
+      font-size: 11px;
+      letter-spacing: 2px;
+    }
+
+    footer {
+      border-top: 1px solid #272a31;
+      padding-top: 25px;
+      text-align: center;
+      color: #686e7a;
+      font-size: 11px;
+      line-height: 2;
+    }
+
+    @keyframes aparecer {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .container {
+        animation: none;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<div id="anuncioNeza">NezaOfficial: No pudimos encontrar al acosador pero dirección contactara con la policía cibernética</div>
+  <main class="container">
 
-<div class="phone">
-  <div class="screen">
-    <div class="top-dot"></div>
-    <div class="shield">!</div>
-    <h1>SISTEMA BLOQUEADO</h1>
-    <div class="sub">Telesecundaria 697 • Neza OS</div>
-    <div class="divider"></div>
-    <div class="account">CUENTA REPORTADA: quemadostelesecundaria697</div>
-    <div class="text">
-      No pudimos identificar al creador de la cuenta. 
-      <b>El acoso no es broma.</b><br><br>
-      Dirección ya tiene el reporte y contactará a <b>Policía Cibernética</b> para la baja e investigación.
-    </div>
-    <div class="status">
-      ⚠️ NezaOfficial: No pudimos encontrar al acosador pero dirección contactara con la policía cibernética
-      <span>Actualizado • Hoy • Neza York 600</span>
-    </div>
-    <div class="foot">Si recibiste mensaje de esa cuenta, no lo compartas. Reporta en orientación. Queda anónimo.</div>
-  </div>
-</div>
+    <header class="top">
+      <div class="symbol">🔒</div>
+      <div class="label">COMUNICADO OFICIAL</div>
 
-<div class="power-btn" onclick="toggleMenu()">⏻</div>
-<div id="menu">
-  <div class="head">NEZA SYSTEM • MENU</div>
-  <a href="https://keepandroidopen696.github.io/ala-verga-los-que-queman/" target="_blank"><div>🔥<br></div><div>Ala verga los que queman<small>Denuncia directa</small></div></a>
-  <a href="https://keepandroidopen696.github.io/" target="_blank"><div>🏠</div><div>Neza York Home<small>Página principal</small></div></a>
-  <a href="https://keepandroidopen696.github.io/palestina-libre/" target="_blank"><div>🇵🇸</div><div>Palestina Libre<small>Info solidaria</small></div></a>
-  <a href="https://keepandroidopen696.github.io/que-es-la-onu/" target="_blank"><div>🌐</div><div>Qué es la ONU<small>Explicación corta</small></div></a>
-</div>
+      <h1>TELESECUNDARIA-697</h1>
 
-<script>
-const msg="NezaOfficial: No pudimos encontrar al acosador pero dirección contactara con la policía cibernética";
-let ctx;
-function ding(t=1){try{if(!ctx)ctx=new(window.AudioContext||window.webkitAudioContext)();let o=ctx.createOscillator(),g=ctx.createGain();o.frequency.value=t==1?880:500;g.gain.value=0.15;o.connect(g);g.connect(ctx.destination);o.start();g.gain.exponentialRampToValueAtTime(0.0001,ctx.currentTime+0.5);o.stop(ctx.currentTime+0.5);}catch(e){}}
-function show(){ding(1);let a=document.getElementById("anuncioNeza");a.innerText=msg;a.style.display="block";setTimeout(()=>a.style.display="none",7000);}
-setTimeout(show,1000); setInterval(show,60000);
-function toggleMenu(){ding(2);let m=document.getElementById("menu");m.style.display=m.style.display==="block"?"none":"block";}
-document.body.addEventListener('click',()=>{if(!ctx)ctx=new(window.AudioContext||window.webkitAudioContext)();},{once:true});
-</script>
+      <p class="subtitle">
+        Cierre definitivo del proyecto
+      </p>
+    </header>
+
+    <section class="content">
+      <h2>Un último mensaje a la comunidad</h2>
+
+      <p>
+        Después de un periodo de trabajo, recopilación
+        de información y esfuerzos por comprender una
+        situación que preocupaba a nuestra comunidad
+        escolar, anunciamos el cierre definitivo del
+        proyecto Telesecundaria-697.
+      </p>
+
+      <p>
+        Durante este tiempo se recopilaron conversaciones,
+        publicaciones y otros materiales relacionados con
+        la cuenta conocida como "Quemados Telesecundaria 697".
+        El objetivo era que la situación pudiera revisarse
+        de manera responsable y que se prestara atención
+        a los posibles perjuicios para los estudiantes.
+      </p>
+
+      <p>
+        Sin embargo, nuestros esfuerzos no permitieron
+        determinar de manera concluyente quién estaba
+        detrás de la cuenta ni obtener la respuesta que
+        esperábamos. Por esta razón, hemos decidido
+        finalizar el proyecto.
+      </p>
+
+      <div class="highlight">
+        No todas las investigaciones llegan a una respuesta.
+        Aun así, cualquier preocupación relacionada con el
+        acoso escolar y la privacidad de los estudiantes
+        merece ser atendida responsablemente.
+      </div>
+
+      <p>
+        Agradecemos a quienes dedicaron su tiempo y
+        participaron de buena fe durante esta etapa.
+        También reconocemos que el cuidado de nuestra
+        comunidad requiere responsabilidad, respeto
+        y pruebas verificables.
+      </p>
+
+      <p>
+        Este cierre marca el final de nuestro proyecto.
+        No publicaremos nuevas actualizaciones ni
+        continuaremos con la investigación desde esta página.
+      </p>
+
+      <p>
+        Nos despedimos con la esperanza de que nuestra
+        comunidad pueda seguir adelante con respeto
+        y que los problemas que afectan a los estudiantes
+        reciban la atención correspondiente.
+      </p>
+
+      <div class="status">
+        ● PROYECTO FINALIZADO PERMANENTEMENTE
+      </div>
+    </section>
+
+    <footer>
+      TODO PROYECTO TIENE UN FINAL.
+      <br>
+      GRACIAS POR HABER FORMADO PARTE DE ESTA ETAPA.
+      <br><br>
+      TELESECUNDARIA-697 · 2026
+      <br>
+      COMUNICADO FINAL
+    </footer>
+
+  </main>
 </body>
 </html>
